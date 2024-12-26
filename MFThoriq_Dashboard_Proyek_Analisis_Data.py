@@ -36,7 +36,7 @@ rental_hour = hour_df.groupby("hr")[category].mean()
 low_threshold = rental_hour.quantile(0.33)
 high_threshold = rental_hour.quantile(0.67)
 rental_hour_cluster = rental_hour.apply(
-  lambda x: "Low Usage" if x <= low_threshold else "High Usage" if x > high_threshold else "Medium Usage"
+  lambda x: "Penggunaan Rendah" if x <= low_threshold else "Penggunaan Tinggi" if x > high_threshold else "Penggunaan Sedang"
 )
 
 # Visualisasi Clustering
